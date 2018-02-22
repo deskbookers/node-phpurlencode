@@ -1,5 +1,5 @@
 "use strict";
-const encode = function(str) {
+var encode = function(str) {
   return encodeURIComponent(str + '')
     .replace(/[!'()]/g, escape)
     .replace(/\*/g, "%2A")
@@ -7,7 +7,7 @@ const encode = function(str) {
     .replace(/~/g, '%7E');
 };
 
-const decode = function(str) {
+var decode = function(str) {
   return decodeURIComponent(
     (str + '')
     .replace(/%(?![\da-f]{2})/gi, function () {
@@ -17,7 +17,7 @@ const decode = function(str) {
   );
 };
 
-const definePrototypes = function () {
+var definePrototypes = function () {
   if (!String.prototype.urlencode) {
     global.String.prototype.urlencode = function () {
       return encode(this);
