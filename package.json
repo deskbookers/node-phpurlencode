@@ -1,14 +1,17 @@
 {
   "name": "deskbookers-phpurlencode",
+  "main": "dist/index.js",
   "description": "Functionally similar to PHP urlencode and urldecode functions",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "devDependencies": {
+    "babel-cli": "^6.26.0",
     "mocha": "^3.2.0"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "compile": "babel src/index.js --out-dir dist"
   },
   "repository": {
     "type": "git",
