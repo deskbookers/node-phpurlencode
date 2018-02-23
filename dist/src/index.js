@@ -1,16 +1,16 @@
 'use strict';
 
-const encode = function (str) {
+var encode = function encode(str) {
   return encodeURIComponent(str + '').replace(/[!'()]/g, escape).replace(/\*/g, '%2A').replace(/\%20/g, '+').replace(/~/g, '%7E');
 };
 
-const decode = function (str) {
+var decode = function decode(str) {
   return decodeURIComponent((str + '').replace(/%(?![\da-f]{2})/gi, function () {
     return '%25';
   }).replace(/\+/g, '%20'));
 };
 
-const definePrototypes = function () {
+var definePrototypes = function definePrototypes() {
   if (!String.prototype.urlencode) {
     global.String.prototype.urlencode = function () {
       return encode(this);
